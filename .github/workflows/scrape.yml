@@ -4,7 +4,11 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron:  '15 * * * *'
+    - cron:  '33 * * * *'
+
+uses: sergeysova/jq-action@v2
+with:
+  cmd: jq -n env
 
 jobs:
   scheduled:
