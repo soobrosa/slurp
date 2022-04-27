@@ -4,11 +4,7 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron:  '33 * * * *'
-
-uses: sergeysova/jq-action@v2
-with:
-  cmd: jq -n env
+    - cron:  '35 * * * *'
 
 jobs:
   scheduled:
@@ -16,6 +12,10 @@ jobs:
     steps:
     - name: Check out this repo
       uses: actions/checkout@v2
+    - name: jq gha
+      uses: sergeysova/jq-action@v2
+      with:
+        cmd: jq -n env
     - name: Fetch latest data
       run: |-
         curl https://api.github.com/repos/PrefectHQ/prefect | jq . > paparazzo.json
