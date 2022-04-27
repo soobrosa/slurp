@@ -19,7 +19,7 @@ jobs:
       uses: sergeysova/jq-action@v2
       id: version
       with:
-        cmd: 'jq .version paparazzo.json -r'
+        cmd: "jq paparazzo.json '[.id, .name, .full_name, .html_url, .description, .created_at, .updated_at, .homepage, .size, .stargazers_count, .watchers_count, .language, .has_issues, .has_projects, .has_downloads, .has_wiki, .has_pages, .forks_count, .open_issues_count, .topics[], .forks, .open_issues, .watchers, .network_count, .subscribers_count]'"
     - name: Show my version
       run: 'echo "version ${{ steps.version.outputs.value }}"'
     - name: Commit and push if it changed
