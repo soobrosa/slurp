@@ -12,16 +12,16 @@ jobs:
     steps:
     - name: Check out this repo
       uses: actions/checkout@v2
+    - name: Fetch latest data
+      run: |-
+        curl https://api.github.com/repos/PrefectHQ/prefect | jq . > paparazzo.json
     - name: Extract version from package.json
       uses: sergeysova/jq-action@v2
       id: version
       with:
-        cmd: 'jq .version package.json -r'
+        cmd: 'jq .version paparazzo.json -r'
     - name: Show my version
       run: 'echo "version ${{ steps.version.outputs.value }}"'
-    - name: Fetch latest data
-      run: |-
-        curl https://api.github.com/repos/PrefectHQ/prefect | jq . > paparazzo.json
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
