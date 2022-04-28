@@ -13,5 +13,5 @@ load_paparazzo: paparazzo.csv
 all: load_paparazzo
 
 nuke:
-	rm paparazzo.json
-	rm paparazzo.csv
+	rm -f paparazzo.json
+	rm -f paparazzo.csv
