@@ -15,10 +15,6 @@ jobs:
     - name: Fetch latest data
       run: |-
         make all
-    - name: Extract version from package.json
-      uses: sergeysova/jq-action@v2
-      with:
-        cmd: "cat paparazzo.json | jq '[.id, .name, .full_name, .html_url, .description, .created_at, .updated_at, .homepage, .size, .stargazers_count, .watchers_count, .language, .has_issues, .has_projects, .has_downloads, .has_wiki, .has_pages, .forks_count, .open_issues_count, .topics[], .forks, .open_issues, .watchers, .network_count, .subscribers_count]'"
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
