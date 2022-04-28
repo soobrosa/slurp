@@ -7,7 +7,10 @@ paparazzo.json: paparazzi.sqlite
 paparazzo.csv: paparazzo.json
 	cat paparazzo.json | jq '[.id, .name, .full_name, .html_url, .description, .created_at, .updated_at, .homepage, .size, .stargazers_count, .watchers_count, .language, .has_issues, .has_projects, .has_downloads, .has_wiki, .has_pages, .forks_count, .open_issues_count, .forks, .open_issues, .watchers, .network_count, .subscribers_count]' -c | sed 's/[][]//g' > $@
 
-all: paparazzo.csv
+load_paparazzo: paparazzo.csv
+	sqlite3 paparazzi.sqlite -cmd ".mode csv" ".import paparazzo.csv paparazzi"
+	
+all: load_paparazzo
 
 nuke:
 	rm paparazzo.json
