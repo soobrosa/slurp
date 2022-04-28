@@ -72,7 +72,7 @@
   "clone_url": "https://github.com/dbt-labs/dbt-core.git",
   "svn_url": "https://github.com/dbt-labs/dbt-core",
   "homepage": "https://getdbt.com",
-  "size": 21199,
+  "size": 21201,
   "stargazers_count": 4605,
   "watchers_count": 4605,
   "language": "Python",
