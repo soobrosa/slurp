@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS paparazzi (
 id INTEGER NOT NULL
 ,name TEXT NOT NULL
 ,full_name TEXT NOT NULL
-,html_url TEXT NOT NULL UNIQUE
+,html_url TEXT NOT NULL
 ,description TEXT NOT NULL
 ,created_at TEXT NOT NULL
 ,updated_at TEXT NOT NULL
