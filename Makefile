@@ -1,6 +1,6 @@
 BASE_URL:='https://api.github.com/repos/'
 
-paparazzi.sqlite:
+outputs/paparazzi.sqlite:
 	/usr/bin/sqlite3 outputs/paparazzi.sqlite < inputs/create_paparazzi.sql
 
 json: paparazzi.sqlite
