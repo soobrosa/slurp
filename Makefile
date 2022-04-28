@@ -24,10 +24,14 @@ load_paparazzo: csv
 	done <inputs/promis.txt
 	touch $@
 
-all: load_paparazzo
+outputs/paparazzi.csv: load_paparazzo
+	sqlite3 -header -csv outputs/paparazzi.sqlite 'select * from paparazzi;' > $@
+
+all: outputs/paparazzi.csv
 
 nuke:
 	rm -f temp/*
 	rm -f csv
 	rm -f json
 	rm -f load_paparazzo
+	rm -f outputs/paparazzi.csv
