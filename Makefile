@@ -11,5 +11,4 @@ all: paparazzo.csv
 
 nuke:
 	rm paparazzo.json
-	rm paparazzi.sqlite
 	rm paparazzo.csv
