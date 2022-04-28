@@ -3,7 +3,7 @@ BASE_URL:='https://api.github.com/repos/'
 outputs/paparazzi.sqlite:
 	/usr/bin/sqlite3 outputs/paparazzi.sqlite < inputs/create_paparazzi.sql
 
-json: paparazzi.sqlite
+json: outputs/paparazzi.sqlite
 	@while read -r file; do \
 	save_file=`echo "$${file##*/}"`; \
 	curl ${BASE_URL}$${file} > temp/$${save_file}.json; \
