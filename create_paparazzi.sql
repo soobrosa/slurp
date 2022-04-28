@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS raw.paparazzi (
+CREATE TABLE IF NOT EXISTS paparazzi (
 id INTEGER NOT NULL
 ,name TEXT NOT NULL
 ,full_name TEXT NOT NULL
