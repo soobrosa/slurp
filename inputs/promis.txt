@@ -1,2 +1,8 @@
 PrefectHQ/prefect
 streamlit/streamlit
+acryldata/datahub
+airbytehq/airbyte/
+ClickHouse/ClickHouse
+dagster-io/dagster
+dbt-labs/dbt-core
+great-expectations/great_expectations
