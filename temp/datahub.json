@@ -192,7 +192,7 @@
     "deployments_url": "https://api.github.com/repos/datahub-project/datahub/deployments",
     "created_at": "2015-11-18T05:47:40Z",
     "updated_at": "2022-04-28T12:25:04Z",
-    "pushed_at": "2022-04-28T12:04:28Z",
+    "pushed_at": "2022-04-28T15:19:46Z",
     "git_url": "git://github.com/datahub-project/datahub.git",
     "ssh_url": "git@github.com:datahub-project/datahub.git",
     "clone_url": "https://github.com/datahub-project/datahub.git",
@@ -211,7 +211,7 @@
     "mirror_url": null,
     "archived": false,
     "disabled": false,
-    "open_issues_count": 233,
+    "open_issues_count": 232,
     "license": {
       "key": "apache-2.0",
       "name": "Apache License 2.0",
@@ -231,7 +231,7 @@
     ],
     "visibility": "public",
     "forks": 1463,
-    "open_issues": 233,
+    "open_issues": 232,
     "watchers": 5402,
     "default_branch": "master"
   },
@@ -303,7 +303,7 @@
     "deployments_url": "https://api.github.com/repos/datahub-project/datahub/deployments",
     "created_at": "2015-11-18T05:47:40Z",
     "updated_at": "2022-04-28T12:25:04Z",
-    "pushed_at": "2022-04-28T12:04:28Z",
+    "pushed_at": "2022-04-28T15:19:46Z",
     "git_url": "git://github.com/datahub-project/datahub.git",
     "ssh_url": "git@github.com:datahub-project/datahub.git",
     "clone_url": "https://github.com/datahub-project/datahub.git",
@@ -322,7 +322,7 @@
     "mirror_url": null,
     "archived": false,
     "disabled": false,
-    "open_issues_count": 233,
+    "open_issues_count": 232,
     "license": {
       "key": "apache-2.0",
       "name": "Apache License 2.0",
@@ -342,7 +342,7 @@
     ],
     "visibility": "public",
     "forks": 1463,
-    "open_issues": 233,
+    "open_issues": 232,
     "watchers": 5402,
     "default_branch": "master"
   },
