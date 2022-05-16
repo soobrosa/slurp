@@ -65,16 +65,16 @@
   "releases_url": "https://api.github.com/repos/dagster-io/dagster/releases{/id}",
   "deployments_url": "https://api.github.com/repos/dagster-io/dagster/deployments",
   "created_at": "2018-04-30T16:30:04Z",
-  "updated_at": "2022-05-15T10:15:37Z",
-  "pushed_at": "2022-05-15T04:44:25Z",
+  "updated_at": "2022-05-16T02:06:36Z",
+  "pushed_at": "2022-05-16T18:23:21Z",
   "git_url": "git://github.com/dagster-io/dagster.git",
   "ssh_url": "git@github.com:dagster-io/dagster.git",
   "clone_url": "https://github.com/dagster-io/dagster.git",
   "svn_url": "https://github.com/dagster-io/dagster",
   "homepage": "https://dagster.io",
-  "size": 452375,
-  "stargazers_count": 4715,
-  "watchers_count": 4715,
+  "size": 452529,
+  "stargazers_count": 4716,
+  "watchers_count": 4716,
   "language": "Python",
   "has_issues": true,
   "has_projects": true,
@@ -85,7 +85,7 @@
   "mirror_url": null,
   "archived": false,
   "disabled": false,
-  "open_issues_count": 952,
+  "open_issues_count": 956,
   "license": {
     "key": "apache-2.0",
     "name": "Apache License 2.0",
@@ -111,8 +111,8 @@
   ],
   "visibility": "public",
   "forks": 593,
-  "open_issues": 952,
-  "watchers": 4715,
+  "open_issues": 956,
+  "watchers": 4716,
   "default_branch": "master",
   "temp_clone_token": null,
   "organization": {
@@ -136,5 +136,5 @@
     "site_admin": false
   },
   "network_count": 593,
-  "subscribers_count": 85
+  "subscribers_count": 86
 }
