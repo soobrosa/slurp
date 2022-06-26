@@ -81,11 +81,11 @@
   "has_downloads": true,
   "has_wiki": true,
   "has_pages": false,
-  "forks_count": 923,
+  "forks_count": 924,
   "mirror_url": null,
   "archived": false,
   "disabled": false,
-  "open_issues_count": 330,
+  "open_issues_count": 329,
   "license": {
     "key": "apache-2.0",
     "name": "Apache License 2.0",
@@ -105,8 +105,8 @@
     "slack"
   ],
   "visibility": "public",
-  "forks": 923,
-  "open_issues": 330,
+  "forks": 924,
+  "open_issues": 329,
   "watchers": 5060,
   "default_branch": "main",
   "temp_clone_token": null,
@@ -130,6 +130,6 @@
     "type": "Organization",
     "site_admin": false
   },
-  "network_count": 923,
+  "network_count": 924,
   "subscribers_count": 105
 }
