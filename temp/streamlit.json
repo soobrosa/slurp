@@ -65,16 +65,16 @@
   "releases_url": "https://api.github.com/repos/streamlit/streamlit/releases{/id}",
   "deployments_url": "https://api.github.com/repos/streamlit/streamlit/deployments",
   "created_at": "2019-08-24T00:14:52Z",
-  "updated_at": "2022-11-04T17:33:23Z",
-  "pushed_at": "2022-11-04T18:18:02Z",
+  "updated_at": "2022-11-05T17:07:11Z",
+  "pushed_at": "2022-11-05T18:11:46Z",
   "git_url": "git://github.com/streamlit/streamlit.git",
   "ssh_url": "git@github.com:streamlit/streamlit.git",
   "clone_url": "https://github.com/streamlit/streamlit.git",
   "svn_url": "https://github.com/streamlit/streamlit",
   "homepage": "https://streamlit.io",
-  "size": 222150,
-  "stargazers_count": 21219,
-  "watchers_count": 21219,
+  "size": 223680,
+  "stargazers_count": 21231,
+  "watchers_count": 21231,
   "language": "Python",
   "has_issues": true,
   "has_projects": false,
@@ -109,7 +109,7 @@
   "visibility": "public",
   "forks": 1912,
   "open_issues": 548,
-  "watchers": 21219,
+  "watchers": 21231,
   "default_branch": "develop",
   "temp_clone_token": null,
   "organization": {
@@ -133,5 +133,5 @@
     "site_admin": false
   },
   "network_count": 1912,
-  "subscribers_count": 278
+  "subscribers_count": 279
 }
