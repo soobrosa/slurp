@@ -65,16 +65,16 @@
   "releases_url": "https://api.github.com/repos/ClickHouse/ClickHouse/releases{/id}",
   "deployments_url": "https://api.github.com/repos/ClickHouse/ClickHouse/deployments",
   "created_at": "2016-06-02T08:28:18Z",
-  "updated_at": "2022-11-24T16:54:01Z",
-  "pushed_at": "2022-11-24T18:10:54Z",
+  "updated_at": "2022-11-25T16:54:29Z",
+  "pushed_at": "2022-11-25T18:04:21Z",
   "git_url": "git://github.com/ClickHouse/ClickHouse.git",
   "ssh_url": "git@github.com:ClickHouse/ClickHouse.git",
   "clone_url": "https://github.com/ClickHouse/ClickHouse.git",
   "svn_url": "https://github.com/ClickHouse/ClickHouse",
   "homepage": "https://clickhouse.com",
-  "size": 889886,
-  "stargazers_count": 26171,
-  "watchers_count": 26171,
+  "size": 893628,
+  "stargazers_count": 26183,
+  "watchers_count": 26183,
   "language": "C++",
   "has_issues": true,
   "has_projects": true,
@@ -82,7 +82,7 @@
   "has_wiki": true,
   "has_pages": false,
   "has_discussions": true,
-  "forks_count": 5306,
+  "forks_count": 5308,
   "mirror_url": null,
   "archived": false,
   "disabled": false,
@@ -109,9 +109,9 @@
     "sql"
   ],
   "visibility": "public",
-  "forks": 5306,
+  "forks": 5308,
   "open_issues": 2717,
-  "watchers": 26171,
+  "watchers": 26183,
   "default_branch": "master",
   "temp_clone_token": null,
   "organization": {
@@ -134,6 +134,6 @@
     "type": "Organization",
     "site_admin": false
   },
-  "network_count": 5306,
-  "subscribers_count": 696
+  "network_count": 5308,
+  "subscribers_count": 697
 }
