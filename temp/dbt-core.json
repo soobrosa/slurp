@@ -65,16 +65,16 @@
   "releases_url": "https://api.github.com/repos/dbt-labs/dbt-core/releases{/id}",
   "deployments_url": "https://api.github.com/repos/dbt-labs/dbt-core/deployments",
   "created_at": "2016-03-10T02:38:00Z",
-  "updated_at": "2023-03-14T14:48:43Z",
-  "pushed_at": "2023-03-14T16:10:25Z",
+  "updated_at": "2023-03-15T16:28:25Z",
+  "pushed_at": "2023-03-15T18:24:30Z",
   "git_url": "git://github.com/dbt-labs/dbt-core.git",
   "ssh_url": "git@github.com:dbt-labs/dbt-core.git",
   "clone_url": "https://github.com/dbt-labs/dbt-core.git",
   "svn_url": "https://github.com/dbt-labs/dbt-core",
   "homepage": "https://getdbt.com",
-  "size": 32402,
-  "stargazers_count": 6663,
-  "watchers_count": 6663,
+  "size": 32432,
+  "stargazers_count": 6667,
+  "watchers_count": 6667,
   "language": "Python",
   "has_issues": true,
   "has_projects": false,
@@ -82,11 +82,11 @@
   "has_wiki": true,
   "has_pages": false,
   "has_discussions": true,
-  "forks_count": 1182,
+  "forks_count": 1184,
   "mirror_url": null,
   "archived": false,
   "disabled": false,
-  "open_issues_count": 459,
+  "open_issues_count": 461,
   "license": {
     "key": "apache-2.0",
     "name": "Apache License 2.0",
@@ -107,9 +107,9 @@
     "slack"
   ],
   "visibility": "public",
-  "forks": 1182,
-  "open_issues": 459,
-  "watchers": 6663,
+  "forks": 1184,
+  "open_issues": 461,
+  "watchers": 6667,
   "default_branch": "main",
   "temp_clone_token": null,
   "organization": {
@@ -132,6 +132,6 @@
     "type": "Organization",
     "site_admin": false
   },
-  "network_count": 1182,
-  "subscribers_count": 136
+  "network_count": 1184,
+  "subscribers_count": 137
 }
