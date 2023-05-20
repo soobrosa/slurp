@@ -65,16 +65,16 @@
   "releases_url": "https://api.github.com/repos/streamlit/streamlit/releases{/id}",
   "deployments_url": "https://api.github.com/repos/streamlit/streamlit/deployments",
   "created_at": "2019-08-24T00:14:52Z",
-  "updated_at": "2023-05-19T14:59:33Z",
-  "pushed_at": "2023-05-19T18:18:10Z",
+  "updated_at": "2023-05-20T14:47:14Z",
+  "pushed_at": "2023-05-20T17:33:57Z",
   "git_url": "git://github.com/streamlit/streamlit.git",
   "ssh_url": "git@github.com:streamlit/streamlit.git",
   "clone_url": "https://github.com/streamlit/streamlit.git",
   "svn_url": "https://github.com/streamlit/streamlit",
   "homepage": "https://streamlit.io",
-  "size": 266381,
-  "stargazers_count": 24741,
-  "watchers_count": 24741,
+  "size": 267246,
+  "stargazers_count": 24760,
+  "watchers_count": 24760,
   "language": "Python",
   "has_issues": true,
   "has_projects": true,
@@ -82,11 +82,11 @@
   "has_wiki": true,
   "has_pages": false,
   "has_discussions": false,
-  "forks_count": 2180,
+  "forks_count": 2182,
   "mirror_url": null,
   "archived": false,
   "disabled": false,
-  "open_issues_count": 621,
+  "open_issues_count": 613,
   "license": {
     "key": "apache-2.0",
     "name": "Apache License 2.0",
@@ -108,9 +108,9 @@
     "streamlit"
   ],
   "visibility": "public",
-  "forks": 2180,
-  "open_issues": 621,
-  "watchers": 24741,
+  "forks": 2182,
+  "open_issues": 613,
+  "watchers": 24760,
   "default_branch": "develop",
   "temp_clone_token": null,
   "organization": {
@@ -133,6 +133,6 @@
     "type": "Organization",
     "site_admin": false
   },
-  "network_count": 2180,
-  "subscribers_count": 290
+  "network_count": 2182,
+  "subscribers_count": 289
 }
