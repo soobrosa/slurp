@@ -65,16 +65,16 @@
   "releases_url": "https://api.github.com/repos/PrefectHQ/prefect/releases{/id}",
   "deployments_url": "https://api.github.com/repos/PrefectHQ/prefect/deployments",
   "created_at": "2018-06-29T21:59:26Z",
-  "updated_at": "2023-06-04T14:56:55Z",
-  "pushed_at": "2023-06-04T12:26:04Z",
+  "updated_at": "2023-06-05T11:41:51Z",
+  "pushed_at": "2023-06-05T18:14:46Z",
   "git_url": "git://github.com/PrefectHQ/prefect.git",
   "ssh_url": "git@github.com:PrefectHQ/prefect.git",
   "clone_url": "https://github.com/PrefectHQ/prefect.git",
   "svn_url": "https://github.com/PrefectHQ/prefect",
   "homepage": "https://prefect.io",
-  "size": 121796,
-  "stargazers_count": 12081,
-  "watchers_count": 12081,
+  "size": 121959,
+  "stargazers_count": 12086,
+  "watchers_count": 12086,
   "language": "Python",
   "has_issues": true,
   "has_projects": false,
@@ -86,7 +86,7 @@
   "mirror_url": null,
   "archived": false,
   "disabled": false,
-  "open_issues_count": 516,
+  "open_issues_count": 520,
   "license": {
     "key": "apache-2.0",
     "name": "Apache License 2.0",
@@ -115,8 +115,8 @@
   ],
   "visibility": "public",
   "forks": 1236,
-  "open_issues": 516,
-  "watchers": 12081,
+  "open_issues": 520,
+  "watchers": 12086,
   "default_branch": "main",
   "temp_clone_token": null,
   "organization": {
@@ -140,5 +140,5 @@
     "site_admin": false
   },
   "network_count": 1236,
-  "subscribers_count": 153
+  "subscribers_count": 152
 }
