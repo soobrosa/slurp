@@ -66,13 +66,13 @@
   "deployments_url": "https://api.github.com/repos/dbt-labs/dbt-core/deployments",
   "created_at": "2016-03-10T02:38:00Z",
   "updated_at": "2023-06-24T18:23:28Z",
-  "pushed_at": "2023-06-24T09:10:10Z",
+  "pushed_at": "2023-06-25T14:20:07Z",
   "git_url": "git://github.com/dbt-labs/dbt-core.git",
   "ssh_url": "git@github.com:dbt-labs/dbt-core.git",
   "clone_url": "https://github.com/dbt-labs/dbt-core.git",
   "svn_url": "https://github.com/dbt-labs/dbt-core",
   "homepage": "https://getdbt.com",
-  "size": 36038,
+  "size": 36054,
   "stargazers_count": 7174,
   "watchers_count": 7174,
   "language": "Python",
@@ -82,11 +82,11 @@
   "has_wiki": true,
   "has_pages": false,
   "has_discussions": true,
-  "forks_count": 1271,
+  "forks_count": 1272,
   "mirror_url": null,
   "archived": false,
   "disabled": false,
-  "open_issues_count": 476,
+  "open_issues_count": 469,
   "license": {
     "key": "apache-2.0",
     "name": "Apache License 2.0",
@@ -107,8 +107,8 @@
     "slack"
   ],
   "visibility": "public",
-  "forks": 1271,
-  "open_issues": 476,
+  "forks": 1272,
+  "open_issues": 469,
   "watchers": 7174,
   "default_branch": "main",
   "temp_clone_token": null,
@@ -132,6 +132,6 @@
     "type": "Organization",
     "site_admin": false
   },
-  "network_count": 1271,
+  "network_count": 1272,
   "subscribers_count": 133
 }
