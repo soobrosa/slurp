@@ -65,16 +65,16 @@
   "releases_url": "https://api.github.com/repos/dagster-io/dagster/releases{/id}",
   "deployments_url": "https://api.github.com/repos/dagster-io/dagster/deployments",
   "created_at": "2018-04-30T16:30:04Z",
-  "updated_at": "2023-08-26T17:04:49Z",
-  "pushed_at": "2023-08-26T18:12:08Z",
+  "updated_at": "2023-08-27T16:46:01Z",
+  "pushed_at": "2023-08-27T17:25:11Z",
   "git_url": "git://github.com/dagster-io/dagster.git",
   "ssh_url": "git@github.com:dagster-io/dagster.git",
   "clone_url": "https://github.com/dagster-io/dagster.git",
   "svn_url": "https://github.com/dagster-io/dagster",
   "homepage": "https://dagster.io",
-  "size": 735009,
-  "stargazers_count": 8263,
-  "watchers_count": 8263,
+  "size": 735005,
+  "stargazers_count": 8270,
+  "watchers_count": 8270,
   "language": "Python",
   "has_issues": true,
   "has_projects": true,
@@ -82,7 +82,7 @@
   "has_wiki": false,
   "has_pages": false,
   "has_discussions": true,
-  "forks_count": 1026,
+  "forks_count": 1025,
   "mirror_url": null,
   "archived": false,
   "disabled": false,
@@ -115,9 +115,9 @@
     "workflow-automation"
   ],
   "visibility": "public",
-  "forks": 1026,
+  "forks": 1025,
   "open_issues": 1921,
-  "watchers": 8263,
+  "watchers": 8270,
   "default_branch": "master",
   "temp_clone_token": null,
   "organization": {
@@ -140,6 +140,6 @@
     "type": "Organization",
     "site_admin": false
   },
-  "network_count": 1026,
-  "subscribers_count": 100
+  "network_count": 1025,
+  "subscribers_count": 101
 }
