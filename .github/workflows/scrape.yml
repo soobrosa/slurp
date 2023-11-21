@@ -16,6 +16,7 @@ jobs:
       run: |-
         make nuke
         make all
+        make nuke
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"

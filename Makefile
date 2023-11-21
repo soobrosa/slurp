@@ -31,7 +31,7 @@ all: outputs/paparazzi.csv
 
 nuke:
 	rm -f temp/*
-	rm -f csv
 	rm -f json
+	rm -f csv
 	rm -f load_paparazzo
-	rm -f outputs/paparazzi.csv
+
