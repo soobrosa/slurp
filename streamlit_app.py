@@ -2,12 +2,8 @@
 
 import pandas as pd
 import streamlit as st
-from st_aggrid import AgGrid, GridOptionsBuilder
-from st_aggrid.shared import GridUpdateMode
+from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode
 
-slurp = pd.read_csv(
-    "https://github.com/soobrosa/slurp/raw/main/outputs/paparazzi.csv"
-)
 
 def aggrid_interactive_table(df: pd.DataFrame):
     """Creates an st-aggrid interactive table based on a dataframe.
@@ -27,7 +23,6 @@ def aggrid_interactive_table(df: pd.DataFrame):
     options.configure_selection("single")
     selection = AgGrid(
         df,
-        enable_enterprise_modules=True,
         gridOptions=options.build(),
         theme="light",
         update_mode=GridUpdateMode.MODEL_CHANGED,
