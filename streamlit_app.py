@@ -36,6 +36,7 @@ slurp = pd.read_csv(
     "https://github.com/soobrosa/slurp/raw/main/outputs/paparazzi.csv"
 )
 slurp["date"] = pd.to_datetime(slurp["date"])
+slurp = slurp.drop_duplicates(subset=["name", "date"], keep="last")
 
 st.title("Modern Data Stack - GitHub Stars Over Time")
 
