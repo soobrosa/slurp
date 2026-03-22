@@ -35,7 +35,26 @@ def aggrid_interactive_table(df: pd.DataFrame):
 slurp = pd.read_csv(
     "https://github.com/soobrosa/slurp/raw/main/outputs/paparazzi.csv"
 )
+slurp["date"] = pd.to_datetime(slurp["date"])
+slurp = slurp.drop_duplicates(subset=["name", "date"], keep="last")
 
+st.title("Modern Data Stack - GitHub Stars Over Time")
+
+stars = slurp.pivot_table(
+    index="date", columns="name", values="stargazers_count"
+).dropna()
+st.line_chart(stars)
+
+metric = st.selectbox(
+    "Explore another metric",
+    ["forks_count", "open_issues_count", "subscribers_count"],
+)
+pivot = slurp.pivot_table(
+    index="date", columns="name", values=metric
+).dropna()
+st.line_chart(pivot)
+
+st.subheader("Snapshot table")
 dates = sorted(slurp["date"].unique(), reverse=True)
 selected_date = st.selectbox("Select date", dates)
 filtered = slurp[slurp["date"] == selected_date].reset_index(drop=True)
