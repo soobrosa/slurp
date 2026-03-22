@@ -36,8 +36,16 @@ slurp = pd.read_csv(
     "https://github.com/soobrosa/slurp/raw/main/outputs/paparazzi.csv"
 )
 
-selection = aggrid_interactive_table(df=slurp)
+dates = sorted(slurp["date"].unique(), reverse=True)
+selected_date = st.selectbox("Select date", dates)
+filtered = slurp[slurp["date"] == selected_date].reset_index(drop=True)
 
-if selection:
-    st.write("You selected:")
-    st.json(selection["selected_rows"])
+selection = aggrid_interactive_table(df=filtered)
+
+if selection and selection["selected_rows"] is not None:
+    selected = selection["selected_rows"]
+    if isinstance(selected, pd.DataFrame):
+        selected = selected.to_dict(orient="records")
+    if selected:
+        st.write("You selected:")
+        st.json(selected)
