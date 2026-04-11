@@ -1,3 +1,9 @@
+import concurrent.futures as cf
+import json
+import re
+import urllib.parse
+import urllib.request
+
 import altair as alt
 import pandas as pd
 import streamlit as st
@@ -15,6 +21,7 @@ METRICS = {
 def load_data() -> pd.DataFrame:
     df = pd.read_csv(DATA_URL)
     df["date"] = pd.to_datetime(df["date"])
+    df = df.dropna(subset=["name", "date", "stargazers_count"])
     df = df.drop_duplicates(subset=["name", "date"], keep="last")
     return df.sort_values(["name", "date"]).reset_index(drop=True)
 
@@ -95,6 +102,77 @@ def collapse_bursts(events: pd.DataFrame, gap_days: int = 3) -> pd.DataFrame:
     return out.sort_values("start", ascending=False).reset_index(drop=True)
 
 
+def repo_homes(df: pd.DataFrame) -> dict:
+    """name -> (full_name, [canonical domains]) for HN URL matching."""
+    out = {}
+    for _, r in df.drop_duplicates("name").iterrows():
+        name = r["name"]
+        full = str(r.get("full_name") or "")
+        hp = str(r.get("homepage") or "")
+        domains = []
+        if hp.strip():
+            parsed = urllib.parse.urlparse(hp if "://" in hp else "https://" + hp)
+            netloc = parsed.netloc.lower()
+            if netloc.startswith("www."):
+                netloc = netloc[4:]
+            if netloc:
+                domains.append(netloc)
+        out[name] = (full, domains)
+    return out
+
+
+def _hit_relevant(hit: dict, name: str, full_name: str, domains: list) -> bool:
+    url = (hit.get("url") or "").lower()
+    title = (hit.get("title") or "").lower()
+    if full_name and full_name.lower() in url:
+        return True
+    if any(d and d in url for d in domains):
+        return True
+    short = name.lower().split("-")[0]
+    return bool(re.search(rf"\b{re.escape(short)}\b", title))
+
+
+@st.cache_data(ttl=86400, show_spinner=False)
+def hn_search(query: str, start_ts: int, end_ts: int) -> list:
+    params = {
+        "query": query,
+        "tags": "story",
+        "numericFilters": f"created_at_i>{start_ts},created_at_i<{end_ts}",
+        "hitsPerPage": 20,
+    }
+    url = "https://hn.algolia.com/api/v1/search?" + urllib.parse.urlencode(params)
+    try:
+        with urllib.request.urlopen(url, timeout=6) as r:
+            return json.loads(r.read()).get("hits", [])
+    except Exception:
+        return []
+
+
+def top_hn_for_burst(row: dict, homes: dict, pad_days: int = 3) -> dict:
+    name = row["repo"]
+    full_name, domains = homes.get(name, ("", []))
+    start = int((row["start"] - pd.Timedelta(days=pad_days)).timestamp())
+    end = int((row["end"] + pd.Timedelta(days=pad_days + 1)).timestamp())
+    hits = hn_search(name.split("-")[0], start, end)
+    relevant = [h for h in hits if _hit_relevant(h, name, full_name, domains)]
+    if not relevant:
+        return {"hn_title": "", "hn_points": None, "hn_url": "", "hn_thread": ""}
+    top = max(relevant, key=lambda h: h.get("points") or 0)
+    return {
+        "hn_title": top.get("title") or "",
+        "hn_points": int(top.get("points") or 0),
+        "hn_url": top.get("url") or "",
+        "hn_thread": f"https://news.ycombinator.com/item?id={top.get('objectID', '')}",
+    }
+
+
+def crosscheck_bursts(bursts: pd.DataFrame, homes: dict) -> pd.DataFrame:
+    rows = bursts.to_dict("records")
+    with cf.ThreadPoolExecutor(max_workers=8) as ex:
+        hn = list(ex.map(lambda r: top_hn_for_burst(r, homes), rows))
+    return pd.DataFrame(hn)
+
+
 st.set_page_config(page_title="Modern Data Stack — Vanity Check", layout="wide")
 st.title("Modern Data Stack — GitHub Vanity Check")
 
@@ -159,18 +237,37 @@ bursts = collapse_bursts(events)
 if bursts.empty:
     st.info("No anomalies at this sensitivity. Lower k or min daily stars.")
 else:
-    st.dataframe(
-        bursts.head(50),
-        hide_index=True,
-        use_container_width=True,
-        column_config={
-            "start": st.column_config.DateColumn(format="YYYY-MM-DD"),
-            "end": st.column_config.DateColumn(format="YYYY-MM-DD"),
-            "peak": st.column_config.NumberColumn("peak/day", format="%d"),
-            "stars_added": st.column_config.NumberColumn("total gained", format="%d"),
-            "days": st.column_config.NumberColumn(format="%d"),
-        },
+    show_hn = st.checkbox(
+        "Cross-check with Hacker News",
+        value=False,
+        help="For each burst, query the HN Algolia API for stories within ±3 days "
+        "and filter to hits that mention the repo by name or link to its domain.",
     )
+    top_bursts = bursts.head(50).reset_index(drop=True)
+
+    if show_hn:
+        with st.spinner("Querying HN…"):
+            hn = crosscheck_bursts(top_bursts, repo_homes(df))
+        display = pd.concat([top_bursts, hn], axis=1)
+        matched = int((hn["hn_points"].fillna(0) > 0).sum())
+        st.caption(f"Matched {matched} / {len(top_bursts)} bursts to an HN story.")
+    else:
+        display = top_bursts
+
+    col_cfg = {
+        "start": st.column_config.DateColumn(format="YYYY-MM-DD"),
+        "end": st.column_config.DateColumn(format="YYYY-MM-DD"),
+        "peak": st.column_config.NumberColumn("peak/day", format="%d"),
+        "stars_added": st.column_config.NumberColumn("total gained", format="%d"),
+        "days": st.column_config.NumberColumn(format="%d"),
+    }
+    if show_hn:
+        col_cfg["hn_title"] = st.column_config.TextColumn("HN top story", width="large")
+        col_cfg["hn_points"] = st.column_config.NumberColumn("HN pts", format="%d")
+        col_cfg["hn_url"] = st.column_config.LinkColumn("story", display_text="open")
+        col_cfg["hn_thread"] = st.column_config.LinkColumn("thread", display_text="open")
+
+    st.dataframe(display, hide_index=True, use_container_width=True, column_config=col_cfg)
 
     daily = stars.diff().reset_index().melt("date", var_name="repo", value_name="daily_stars")
     base = alt.Chart(daily).mark_line(opacity=0.6).encode(
